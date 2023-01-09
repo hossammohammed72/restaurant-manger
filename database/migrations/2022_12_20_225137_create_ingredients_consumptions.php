@@ -15,10 +15,10 @@ class CreateIngredientsConsumptions extends Migration
     {
         Schema::create('ingredients_consumptions', function (Blueprint $table) {
             $table->id();
-            $table->foreign('product_id');
-            $table->foreign('ingredient_id');
-            $table->foreign('order_id');
-            $table->integer("consumption")->comment(("in grams"));
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('ingredient_id');
+            $table->unsignedBigInteger('order_id');
+            $table->integer("consumption")->comment("in grams");
             $table->timestamps();
         });
     }
